@@ -1,11 +1,14 @@
 { config, pkgs, ...}: let
-  email = "e.bonnefond.bailey@protonmail.com";
+  email = "edward.bailey.100@outlook.com";
   name = "Cerustall";
 in {
 
-    home.packages = with pkgs; [
-      gh
-    ];
+    #home.packages = with pkgs; [
+    #  gh
+    #];
+
+    programs.gh.enable = true;
+
     programs.git = {
       enable = true;
       settings = {

@@ -1,0 +1,29 @@
+[mgr]
+ratio = [1, 4, 3]
+sort_by = "alphabetical"
+sort_sensitive = true
+sort_dir_first = true
+linemode = "size"
+show_hidden = true
+show_symlink = false
+scrolloff = 5
+mouse_events = ["click", "scroll", "touch", "move", "drag"]
+
+[preview]
+wrap = "yes"
+tab_size = 2
+image_quality = 50
+
+[opener]
+play = [
+	{ run = "mpv %s", orphan = true, for = "unix" }
+]
+edit = [
+	{ run = "$EDITOR %s", block = true, for = "unix" }
+]
+
+[input]
+cursor_blink = false
+
+[flavor]
+dark = "gruvbox-dark"

@@ -2,6 +2,7 @@
 
   imports = [
     ./homebrew.nix
+    ./../../modules/desktop
   ];
 
   users.users.edward = {
@@ -16,7 +17,7 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  programs.zsh.enable = true;
+  #programs.zsh.enable = true;
 
   system = {
     primaryUser = "edward";
