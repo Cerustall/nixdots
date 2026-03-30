@@ -4,8 +4,9 @@
       "ff" = "fastfetch";
       "yz" = "yazi";
       "cl" = "clear";
-      "darwin-rebuild" = "sudo darwin-rebuild switch --flake ~/flake; sudo yabai --load-sa";
+      "darwin-rebuild" = "sudo darwin-rebuild switch --flake ~/flake; sleep .1; sudo yabai --load-sa";
       "yabai-reload" = "sudo yabai --load-sa";
+      "run-kitty" = "open -n -a ~/Applications/'Home Manager Apps'/kitty.app";
     };
   in {
     home.packages = with pkgs; [

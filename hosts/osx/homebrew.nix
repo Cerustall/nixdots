@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
 {
   nix-homebrew = {
     enable = true;
@@ -16,12 +16,7 @@
 
   homebrew = {
     enable = true;
-    taps = [
-#      { name = "homebrew/homebrew-core"; clone_target = inputs.homebrew-core; }
-#      { name = "homebrew/homebrew-cask"; clone_target = inputs.homebrew-cask; }
-#      { name = "asmvik/formulae"; clone_target = "https://asmvik@github.com/asmvik/yabai.git"; }
-#       "asmvik/yabai"
-    ];
+    taps = builtins.attrNames config.nix-homebrew.taps;
     brews = [
 
     ];
