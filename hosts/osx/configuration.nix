@@ -1,7 +1,7 @@
 { inputs, config, pkgs, lib, ... }: {
 
   imports = [
-    ./../../modules/nix/default.nix
+    ./../../modules/nix
     ./../../modules/desktop
   ];
 
@@ -16,8 +16,6 @@
   nixpkgs.config.allowUnfree = true;
 
   security.pam.services.sudo_local.touchIdAuth = true;
-
-  #programs.zsh.enable = true;
 
   system = {
     primaryUser = "edward";

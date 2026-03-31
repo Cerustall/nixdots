@@ -2,7 +2,6 @@
   imports = [
     ./../../modules/dev
     ./../../modules/helix
-#    ./../../modules/desktop
     ./../../modules/misc
   ];
 

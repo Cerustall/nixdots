@@ -6,7 +6,6 @@
     ./zsh
     ./starship
     ./languages
-    ./fonts
     ./fastfetch
     ./yazi
   ];

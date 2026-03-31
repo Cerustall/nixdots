@@ -9,7 +9,6 @@
     taps = {
       "homebrew/homebrew-core" = inputs.homebrew-core;
       "homebrew/homebrew-cask" = inputs.homebrew-cask;
-#      "asmvik/formulae" = inputs.yabai; #"https://asmvik@github.com/asmvik/yabai.git";
     };
     mutableTaps = false;
   };
