@@ -1,29 +1,35 @@
 # Nixdots
-The setup that I use on all of my devices, managed declaratively with Nix!
+The setup that I use on all of my devices, managed declaratively with Nix.
+Unfinished though usable in its current state. Suggestions welcome!
 
 ## Usage
 
-Mac (Apple Silicon, nix-darwin):
+Nix Darwin (Mac/Apple Silicon):
 ```
   $ git clone https://github.com/Cerustall/nixdots
   $ cd nixdots
-  $ sudo darwin-rebuild switch --flake .
+  $ sudo darwin-rebuild switch --flake .#osx
 ```
 
 NixOS:
 ```
   $ git clone https://github.com/Cerustall/nixdots
   $ cd nixdots
-  $ sudo nixos-rebuild switch --flake .
+  $ sudo nixos-rebuild switch --flake .#desktop
 ```
-Note: This will not work right now! There is no config for NixOS yet.
+Note: This will not work right now as there is no config for NixOS yet.
 
 nix-run:
 ```
   $ nix run github:Cerustall/nixdots
 ```
+If you change networking.hostname for whichever platform you use, make sure your rebuild command reflects it:
+```
+  sudo darwin-rebuild switch --flake .#${your-new-hostname}
+  //
+  sudo nixos-rebuild switch --flake .#${your-new-hostname}
+```
 
-Unfinished though usable in its current state. Suggestions welcome!
 
 ## Roadmap:
 - [x] Basic readme
@@ -32,5 +38,6 @@ Unfinished though usable in its current state. Suggestions welcome!
 - [ ] Helix LSPs
 - [x] Config for Mac
 - [ ] Config for desktop
+- [ ] Set up hypr tools
 - [ ] Config for Raspberry Pi
 - [ ] Multiple colourschemes

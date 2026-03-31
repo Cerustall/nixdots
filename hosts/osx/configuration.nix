@@ -15,6 +15,8 @@
   system.stateVersion = 6;
   nixpkgs.config.allowUnfree = true;
 
+  networking.hostName = "osx";
+
   security.pam.services.sudo_local.touchIdAuth = true;
 
   system = {
@@ -24,8 +26,8 @@
     defaults = {
       
       screensaver = {
-	askForPassword = true;
-	askForPasswordDelay = 0;
+	      askForPassword = true;
+	      askForPasswordDelay = 0;
       };
 
       dock = {
@@ -77,9 +79,6 @@
           loginWindowIdleTime = 60;
         };
       };
-
     };
-
   };
-
 }
