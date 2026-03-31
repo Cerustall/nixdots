@@ -1,7 +1,7 @@
 { inputs, config, pkgs, lib, ... }: {
 
   imports = [
-    ./homebrew.nix
+    ./../../modules/nix/default.nix
     ./../../modules/desktop
   ];
 

@@ -3,10 +3,6 @@
   name = "Cerustall";
 in {
 
-    #home.packages = with pkgs; [
-    #  gh
-    #];
-
     programs.gh.enable = true;
 
     programs.git = {

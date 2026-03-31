@@ -5,7 +5,7 @@
       "yz" = "yazi";
       "cl" = "clear";
       "darwin-rebuild" = "sudo darwin-rebuild switch --flake ~/flake; sleep .1; sudo yabai --load-sa";
-      "yabai-reload" = "sudo yabai --load-sa";
+      "yabai-reload" = "sudo yabai --load-sa && skhd -r";
       "run-kitty" = "open -n -a ~/Applications/'Home Manager Apps'/kitty.app";
     };
   in {
@@ -17,7 +17,7 @@
     programs.zsh = {
       enable = true;
       shellAliases = aliases;
-      loginExtra = ''eval "$(starship init zsh)"'';
+      loginExtra = ''ff; eval "$(starship init zsh)"'';
     };
   }
 

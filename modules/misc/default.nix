@@ -4,6 +4,7 @@
     prismlauncher
     firefox
     mpv
+    obsidian
   ];
 
 }
