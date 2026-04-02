@@ -31,8 +31,7 @@
         system = "x86_64-linux";
 	      modules = [
 	        ./hosts/desktop/configuration.nix
-	        home-manager.nixosModules.home-manager
-          {
+	        home-manager.nixosModules.home-manager {
 	          home-manager = {
 	            useGlobalPkgs = true;
 	            userUserPackages = true;
@@ -53,8 +52,7 @@
       modules = [
         ./hosts/osx/configuration.nix
 	      inputs.mac-app-util.darwinModules.default
-        inputs.home-manager.darwinModules.home-manager
-        {
+        inputs.home-manager.darwinModules.home-manager {
           home-manager = {
             backupFileExtension = "hmbackup";
             useGlobalPkgs = true;

@@ -2,7 +2,7 @@
   imports = [
     ./../../modules/dev
     ./../../modules/helix
-    ./../../modules/misc
+    ./../../modules/nix/darwin-util.nix
   ];
 
   home.username = "edward";

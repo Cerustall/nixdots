@@ -8,6 +8,8 @@
     
     obsidian
     typst
+
+    rpi-imager
   ];
 
 }

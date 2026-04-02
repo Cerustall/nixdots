@@ -1,8 +1,8 @@
 { inputs, config, pkgs, lib, ... }: {
 
   imports = [
-    ./../../modules/nix
-    ./../../modules/desktop
+    ./../../modules/nix/fonts.nix
+    ./../../modules/desktop/yabai/default.nix
   ];
 
   users.users.edward = {
