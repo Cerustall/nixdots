@@ -35,32 +35,31 @@
       #Filler option for desktop
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	modules = [
-	  ./hosts/desktop/configuration.nix
-	  home-manager.nixosModules.home-manager
+	      modules = [
+	        ./hosts/desktop/configuration.nix
+	        home-manager.nixosModules.home-manager
           {
-	    home-manager = {
-	      useGlobalPkgs = true;
-	      userUserPackages = true;
-	      extraSpecialArgs = { inherit inputs; };
-	      users.edward = import ./hosts/desktop/home.nix;
-	    };
-	  }
-
-	];
+	          home-manager = {
+	            useGlobalPkgs = true;
+	            userUserPackages = true;
+	            extraSpecialArgs = { inherit inputs; };
+	            users.edward = import ./hosts/desktop/home.nix;
+	          };
+	        }
+    
+	      ];
       };
       
       # Config for RPi5? aarch64-linux
 
     };
 
-    darwinConfigurations."Edwards-MacBook-Air" = inputs.nix-darwin.lib.darwinSystem {
+    darwinConfigurations."osx" = inputs.nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
         ./hosts/osx/configuration.nix
-	inputs.mac-app-util.darwinModules.default
+	      inputs.mac-app-util.darwinModules.default
         inputs.home-manager.darwinModules.home-manager
-
         {
           home-manager = {
             backupFileExtension = "hmbackup";
@@ -73,15 +72,9 @@
             ];
           };
         }
-
         inputs.nix-homebrew.darwinModules.nix-homebrew
-
       ];
       specialArgs = { inherit inputs; };
     };
-
-
   };
-
-
 }
