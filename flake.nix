@@ -17,11 +17,6 @@
       flake = false;
     };
 
-    #yabai = {
-    #  url = "https://asmvik@github.com/asmvik/yabai.git";
-    #  flake = false;
-    #};
-
     mac-app-util.url = "github:hraban/mac-app-util";
 
     home-manager = {
@@ -32,7 +27,6 @@
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
     nixosConfigurations = {
-      #Filler option for desktop
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 	      modules = [
