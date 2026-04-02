@@ -309,8 +309,7 @@
         "mac-app-util": "mac-app-util",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
-        "nixpkgs": "nixpkgs_5",
-        "yabai": "yabai"
+        "nixpkgs": "nixpkgs_5"
       }
     },
     "systems": {
@@ -377,18 +376,6 @@
         "owner": "numtide",
         "repo": "treefmt-nix",
         "type": "github"
-      }
-    },
-    "yabai": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-tpfOUmBDbEJKlDG4imC+UHGwxYhRbK+iROoDKPG3iCg=",
-        "type": "file",
-        "url": "https://asmvik@github.com/asmvik/yabai.git"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://asmvik@github.com/asmvik/yabai.git"
       }
     }
   },

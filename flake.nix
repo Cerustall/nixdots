@@ -17,10 +17,10 @@
       flake = false;
     };
 
-    yabai = {
-      url = "https://asmvik@github.com/asmvik/yabai.git";
-      flake = false;
-    };
+    #yabai = {
+    #  url = "https://asmvik@github.com/asmvik/yabai.git";
+    #  flake = false;
+    #};
 
     mac-app-util.url = "github:hraban/mac-app-util";
 
