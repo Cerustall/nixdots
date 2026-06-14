@@ -5,7 +5,9 @@
     cmake
     gnumake
     ninja
-
+    glib
+    glibc
+    
     # general
     zlib
 

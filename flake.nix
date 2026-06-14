@@ -33,8 +33,9 @@
 	        ./hosts/desktop/configuration.nix
 	        home-manager.nixosModules.home-manager {
 	          home-manager = {
+                    backupFileExtension = "hmbackup";
 	            useGlobalPkgs = true;
-	            userUserPackages = true;
+	            useUserPackages = true;
 	            extraSpecialArgs = { inherit inputs; };
 	            users.edward = import ./hosts/desktop/home.nix;
 	          };

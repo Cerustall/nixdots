@@ -1,7 +1,6 @@
 { inputs, config, pkgs, ... }: {
   imports = [
-    ./../../modules/nix
-    ./../../modules/desktop/hypr/default.nix
+    ./../../modules/nix/fonts.nix
     ./hardware-configuration.nix
   ];
 
@@ -64,18 +63,29 @@
     enable = true;
     enable32Bit = true;
   };
+    
   ## AMDGPU, loading kernel module into initramfs
-  hardware.amdgpu = {
-    opencl.enable = true;
-    initrd.enable = true;
-  };
+  #hardware.amdgpu = {
+  #  opencl.enable = true;
+  #  initrd.enable = true;
+  #};
+  
   ## LACT, for over/under clocking/volting, fan curves
   environment.systemPackages = with pkgs; [ lact ];
   systemd.packages = with pkgs; [ lact ];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
 
+  ## Xwayland support
+  programs.xwayland.enable =true;
+
+  # Enable notifs?
+  services.systembus-notify.enable = true;
 
   # Nix
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  programs.zsh.enable = true;
+  system.stateVersion = "26.05";
+  programs.dconf.enable = true;
+  environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
 }

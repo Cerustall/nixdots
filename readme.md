@@ -38,6 +38,10 @@ If you change networking.hostname for whichever platform you use, make sure your
 - [ ] Helix LSPs
 - [x] Config for Mac
 - [ ] Config for desktop
-- [ ] Set up hypr tools
+- [ ] ~~Set up hypr tools~~
+- [ ] Set up Sway tools
+  - [ ] SwayIdle
+  - [ ] SwayLock
+  - [ ] Mako
 - [ ] Config for Raspberry Pi
 - [ ] Multiple colourschemes

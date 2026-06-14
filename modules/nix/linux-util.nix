@@ -22,7 +22,8 @@
     wofi
 
     ## Notification daemon
-    dunst
+    mako
+    libnotify
 
     ## Screenshots
     grim
@@ -32,8 +33,8 @@
     wl-clipboard
 
     ## Audio management
-    pavucontrol
-    pamixer
+    pwvucontrol
+    pipewire
 
     ## Unzip
     unzip
@@ -46,5 +47,14 @@
     cava
     pipes
     hollywood
+
+    ## Bar
+    
+
+    ## Wallpapers
+    
+
+    ## Idle management
+  
   ];
 }
