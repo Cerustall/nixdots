@@ -29,7 +29,7 @@
 
       config = rec {
         startup = [
-          { command = "pipewire"; }
+          { command = "wireplumber"; }
           { command = "kitty"; }
           { command = "firefox"; }
           { command = "steam"; }

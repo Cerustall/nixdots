@@ -43,6 +43,22 @@
     
 	      ];
       };
+
+      thinkpad = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+		modules = [
+		  ./hosts/thinkpad/configuration.nix
+		  home-manager.nixosModules.home-manager {
+		    home-manager = {
+		      backupFileExtension = "hmbackup";
+		      useGlobalPkgs = true;
+		      useUserPackages = true;
+		      extraSpecialArgs = { inherit inputs; };
+		      users.edward = import ./hosts/thinkpad/home.nix;
+		    };
+		  }
+		];
+      };
       
       # Config for RPi5? aarch64-linux
 
