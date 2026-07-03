@@ -19,14 +19,20 @@
 
     mac-app-util.url = "github:hraban/mac-app-util";
 
+    nixos-06cb-009a-fingerprint-sensor = {
+      url = "github:viktor-grunwaldt/t480-fingerprint-nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
+  outputs = { self, nixpkgs, home-manager, nixos-06cb-009a-fingerprint-sensor, ... } @ inputs: {
     nixosConfigurations = {
+      
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 	      modules = [
@@ -40,24 +46,24 @@
 	            users.edward = import ./hosts/desktop/home.nix;
 	          };
 	        }
-    
 	      ];
       };
 
       thinkpad = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-		modules = [
-		  ./hosts/thinkpad/configuration.nix
-		  home-manager.nixosModules.home-manager {
-		    home-manager = {
-		      backupFileExtension = "hmbackup";
-		      useGlobalPkgs = true;
-		      useUserPackages = true;
-		      extraSpecialArgs = { inherit inputs; };
-		      users.edward = import ./hosts/thinkpad/home.nix;
-		    };
-		  }
-		];
+		    modules = [
+		      ./hosts/thinkpad/configuration.nix
+		      home-manager.nixosModules.home-manager {
+		        home-manager = {
+		        backupFileExtension = "hmbackup";
+		        useGlobalPkgs = true;
+		        useUserPackages = true;
+		        extraSpecialArgs = { inherit inputs; };
+		        users.edward = import ./hosts/thinkpad/home.nix;
+		        };
+		      }
+		      nixos-06cb-009a-fingerprint-sensor.nixosModules."06cb-009a-fingerprint-sensor"
+		    ];
       };
       
       # Config for RPi5? aarch64-linux

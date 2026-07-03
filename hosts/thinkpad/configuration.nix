@@ -58,6 +58,12 @@
     defaultUserShell = pkgs.zsh;
   };
 
+  # Fingerprint recognition
+  services."06cb-009a-fingerprint-sensor" = {
+    enable = true;
+    backend = "libfprint-tod";
+    calib-data-file = ./calib-data.bin;
+  };
 
   # Gaming
   programs.steam = {
@@ -73,28 +79,17 @@
     enable32Bit = true;
   };
     
-  ## AMDGPU, loading kernel module into initramfs
-  #hardware.amdgpu = {
-  #  opencl.enable = true;
-  #  initrd.enable = true;
-  #};
-  
-  ## LACT, for over/under clocking/volting, fan curves
-  environment.systemPackages = with pkgs; [ lact ];
-  systemd.packages = with pkgs; [ lact ];
-  systemd.services.lactd.wantedBy = ["multi-user.target"];
-
   ## Xwayland support
-  programs.xwayland.enable =true;
+  programs.xwayland.enable = true;
 
-  # Enable notifs?
+  # Enable notifs
   services.systembus-notify.enable = true;
 
   # Power management
   services.undervolt = {
     package = pkgs.undervolt;
     enable = true;
-    coreOffset = -100;
+    coreOffset = -95;
     uncoreOffset = -10;
     turbo = 1;
     verbose = true;
