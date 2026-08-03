@@ -18,8 +18,6 @@
     prismlauncher
 
     # Utilities
-    ## Launcher
-    wofi
 
     ## Notification daemon
     mako
@@ -34,7 +32,7 @@
 
     ## Audio management
     pwvucontrol
-    pipewire
+    pamixer
 
     ## Unzip
     unzip
@@ -55,6 +53,8 @@
     
 
     ## Idle management
-  
+
+    ## Brightness control
+    brightnessctl
   ];
 }

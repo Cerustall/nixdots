@@ -5,7 +5,8 @@
     mod = "Mod1";
     term = "kitty";
     menu = "wofi --show=drun";
-    ss = "IMG=/home/edward/Pictures/Screenshots/$(date +%Y-%m-%d_%h-%m-%s).png && grim -g ''$(slurp)'' $IMG && wl-copy < $IMG";
+    locker = "hyprlock";
+    ss = ''IMG=/home/edward/Pictures/Screenshots/$(date +%Y-%m-%d_%h-%m-%s).png && grim -g "$(slurp)" $IMG && wl-copy < $IMG'';
 
     # Colours
     background = "#7c6f64";
@@ -21,14 +22,33 @@
 
     
   in {
+    imports = [
+      ./hyprlock.nix
+      ./swayidle.nix
+    ];
+    services = {
+      network-manager-applet.enable = true;
+      blueman-applet = {
+        enable = true;
+        systemdTargets = [
+          "sway-session.target"
+        ];
+      };  
+    };
+    
     wayland.windowManager.sway = {
       enable = true;
       package = swayfx;
       checkConfig = false;
       xwayland = true;
 
+      systemd = {
+        enable = true;
+      };
+
       config = rec {
         startup = [
+          { command = "swaymsg bar mode toggle"; }
           { command = "wireplumber"; }
           { command = "kitty"; }
           { command = "firefox"; }
@@ -67,7 +87,8 @@
         floating = {
           titlebar = false;
           criteria = [
-            { app_id = "pavucontrol"; }
+            { app_id = "pwvucontrol"; }
+            { app_id = "blueman"; }
           ];
         };
 
@@ -79,6 +100,7 @@
         keybindings = {
           "${mod}+t" = "exec ${term}";
           "${mod}+q" = "kill";
+          "${mod}+l" = "exec ${locker}";
           "${mod}+Space" = "exec ${menu}";
           "${mod}+Shift+s" = "exec ${ss}";
 
@@ -166,7 +188,7 @@
       };
 
       input = {
-        "*" = {
+        "type:keyboard" = {
           xkb_variant = "gb";  
         };
       };
@@ -198,6 +220,16 @@
 
     ## SwayFX Config
     extraConfig = ''
+
+      bindsym --locked XF86AudioMute exec pamixer -t
+      bindsym --locked XF86AudioLowerVolume exec pamixer -d 5
+      bindsym --locked XF86AudioRaiseVolume exec pamixer -i 5
+      bindsym --locked XF86AudioMicMute exec pamixer --default-source -t
+
+      # Special keys to adjust brightness via brightnessctl
+      bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+      bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+            
       corner_radius 14
       shadows on
       shadow_offset 0 0

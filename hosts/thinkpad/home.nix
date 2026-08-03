@@ -2,9 +2,10 @@
   imports = [
     # Packages, equivalent to homebrew file for Darwin config
     ./../../modules/nix/linux-util.nix
-
+    ./../../modules/desktop/waybar
     ./../../modules/desktop/sway
-    ./../../modules/desktop/wpaperd    
+    ./../../modules/desktop/wpaperd
+    ./../../modules/desktop/wofi
     ./../../modules/dev
     ./../../modules/helix    
   ];

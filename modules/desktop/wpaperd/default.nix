@@ -4,10 +4,13 @@
     package = pkgs.wpaperd;
     settings = {
       DP-3 = {
-        path = "~/flake/assets/nasa-2.png";
+        path = "~/nixdots/assets/nasa-2.png";
       };
       HDMI-A-1 = {
-        path = "~/flake/assets/nasa-2.png";
+        path = "~/nixdots/assets/nasa-2.png";
+      };
+      eDP-1 = {
+        path = "~/nixdots/assets/nasa-2.png";
       };
     };
   };

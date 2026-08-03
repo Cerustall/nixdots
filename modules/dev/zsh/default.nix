@@ -5,7 +5,7 @@
       "yz" = "yazi";
       "cl" = "clear";
       "darwin-rebuild" = "sudo darwin-rebuild switch --flake ~/flake; sleep .1; sudo yabai --load-sa";
-      "nixos-rebuild" = "sudo nixos-rebuild switch --flake ~/flake";
+      "nixos-rebuild" = "sudo nixos-rebuild switch --flake ~/nixdots";
       "yabai-reload" = "sudo yabai --load-sa && skhd -r";
       "run-kitty" = "open -n -a ~/Applications/'Home Manager Apps'/kitty.app";
     };

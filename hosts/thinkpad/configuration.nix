@@ -21,6 +21,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.enable = true;
   };
 
   # Bluetooth
@@ -64,6 +65,7 @@
     backend = "libfprint-tod";
     calib-data-file = ./calib-data.bin;
   };
+  security.pam.services.edward.fprintAuth = true;
 
   # Gaming
   programs.steam = {
