@@ -4,9 +4,36 @@
     ./hardware-configuration.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    tuigreet
+  ];
+
   # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  #boot.loader.systemd-boot.enable = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    systemd-boot = {
+      enable = true;
+      memtest86.enable = true;
+    };
+  };
+  #boot.loader.efi.canTouchEfiVariables = true;
+
+  # Greeter
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        user = "edward";
+        command = "tuigreet --cmd sway"; # you may pass `--config` here
+      };
+    };
+  };
+
+  # Console
+  console = {
+    keyMap = "uk";
+  };
 
   # Networking
   networking = {
@@ -14,6 +41,7 @@
     networkmanager.enable = true;
   };
 
+  # SSH
   services.openssh = {
     enable = true;
     openFirewall = true;
@@ -60,8 +88,6 @@
     LC_TELEPHONE = "en_GB.UTF-8";
     LC_TIME = "en_GB.UTF-8";
   };
-  ## Console keymap
-  console.keyMap = "uk";
 
   # User
   users = {
