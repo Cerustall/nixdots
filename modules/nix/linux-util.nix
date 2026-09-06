@@ -20,7 +20,7 @@
     # Utilities
 
     ## Notification daemon
-    mako
+    #mako
     libnotify
 
     ## Screenshots

@@ -6,6 +6,7 @@
     ./../../modules/desktop/sway
     ./../../modules/desktop/wpaperd
     ./../../modules/desktop/wofi
+    ./../../modules/desktop/mako
     ./../../modules/dev
     ./../../modules/helix    
   ];
@@ -42,13 +43,13 @@
     };
   };
 
-  fonts.fontconfig = {
-    enable = true;
-    defaultFonts = {
-      sansSerif = [ "Jetbrains Mono Nerd Font" ];
-      monospace = [ "Jetbrains Mono Nerd Font" ];
-    };
-  };
+  #fonts.fontconfig = {
+  #  enable = true;
+  #  defaultFonts = {
+  #    sansSerif = [ "Jetbrains Mono Nerd Font" ];
+  #    monospace = [ "Jetbrains Mono Nerd Font" ];
+  #  };
+  #};
 
   # Let HM manage itself
   programs.home-manager.enable = true;

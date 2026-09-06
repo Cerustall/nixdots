@@ -12,7 +12,7 @@
       background_blur = 25;
       hide_window_decorations = "titlebar-only";
 
-      font_family = "JetBrains Mono";
+      font_family = "DepartureMono Nerd Font";
 
       color0  = "#282828";
       color8  = "#928374";

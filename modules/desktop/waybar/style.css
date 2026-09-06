@@ -1,0 +1,37 @@
+* {
+  min-height: 0;
+  min-width: 0;
+  font-family: Lexend, "DepartureMono Nerd Font";
+  font-size: 16px;
+  font-weight: 600;
+}
+
+window#waybar {
+  background-color: #3c3836;
+}
+
+#workspaces button {
+  padding: 0.3rem 0.3rem;
+  margin: 0.3rem 0.3rem;
+  border-radius: 6px;
+  background-color: #3c3836;
+  color: #ffffff;
+}
+
+#workspaces button:hover {
+  color: #ffffff;
+}
+
+#custom-power,
+#sway-window,
+#sway-workspaces,
+#gamemode,
+#memory,
+#cpu,
+#wireplumber,
+#tray,
+#battery,
+#clock {
+  padding: 0.3rem 0.3rem;
+  margin: 0.3rem 0.3rem;
+}

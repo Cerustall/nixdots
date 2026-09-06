@@ -14,6 +14,19 @@
     networkmanager.enable = true;
   };
 
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      PasswordAuthentication = true;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+      AllowUsers = [ "edward" ];
+      MaxAuthTries = 3;
+      PerSourcePenalties = "crash:3600s authfail:3600s max:86400s";
+    };
+  };
+
   # Audio
   security.rtkit.enable = true;
   services.pipewire = {
@@ -32,6 +45,8 @@
   services.blueman.enable = true;
 
   # Localization
+  ## Timezone
+  time.timeZone = "Europe/London";
   ## Locales
   i18n.defaultLocale = "en_GB.UTF-8";
   i18n.extraLocaleSettings = {

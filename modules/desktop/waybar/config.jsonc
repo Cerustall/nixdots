@@ -8,8 +8,13 @@
     },
     
     "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": [" ", " ", " ", " ", " "],
+        "format": "{icon} {capacity}%",
+        "format-time": "{H}:{M}",
+        "format-icons": {
+        	"default": [" ", " ", " ", " ", " "],
+        	"charging": ["󰂄"]
+				},
+        "tooltip-format": "{time}"
     },
     
     "clock": {
@@ -37,9 +42,8 @@
 	    "icon-size": 21,
 	    "spacing": 10,
 	    "icons": {
-	    	// CUSTOM ICONS CURRENTLY BROKEN - REVISIT WHEN FIX AVAILABLE
-		    //"blueman": "/homh/edward/nixdots/assets/bluetooth-icon.svg",
-		    //"nm-applet": "./../../../assets/wifi-icon.svg",
+		    "blueman": "/home/edward/nixdots/assets/bluetooth-logo.png",
+		    "nm-applet": "/home/edward/nixdots/assets/wifi-logo.png",
 		    "spotify": false,
 		    "discord": false
 	    },
@@ -49,7 +53,7 @@
     },
 
     "wireplumber": {
-	    "format": "{icon}",
+	    "format": "{icon}{volume}%",
 	    "format-muted": "󰝟 ",
 	    "format-icons": [" ", " ", " "],
 	    "on-click": "pwvucontrol"

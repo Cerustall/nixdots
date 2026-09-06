@@ -45,3 +45,5 @@ If you change networking.hostname for whichever platform you use, make sure your
   - [ ] Mako
 - [ ] Config for Raspberry Pi
 - [ ] Multiple colourschemes
+- [ ] Change all absolute paths for relative ones
+  - [ ] Define XDG config home or similar
