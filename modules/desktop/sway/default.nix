@@ -49,12 +49,8 @@
       config = rec {
         startup = [
           { command = "swaymsg bar mode toggle"; }
-          { command = "wireplumber"; }
           { command = "kitty"; }
           { command = "firefox"; }
-          { command = "steam"; }
-          { command = "spotify"; }
-          { command = "discord"; }
         ];
 
         colors = {
