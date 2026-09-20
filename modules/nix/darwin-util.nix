@@ -4,6 +4,7 @@
     prismlauncher
 
     firefox
+    inputs.helium.packages.${pkgs.system}.default
     mpv
     
     obsidian

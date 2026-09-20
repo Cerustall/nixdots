@@ -7,6 +7,7 @@
 
     # Daily use
     firefox
+    inputs.helium.packages.${pkgs.system}.default
     spotify
     discord
     proton-vpn
